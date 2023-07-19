@@ -1,4 +1,4 @@
-exports.postsRoutes = (fastify) => {
+exports.postRoutes = (fastify) => {
   fastify.get("/posts", function (resquest, reply) {
     fastify.mysql.query("SELECT * FROM posts", function (error, results) {
       reply.send(error || results);

@@ -1,4 +1,4 @@
-exports.usersRoutes = (fastify) => {
+exports.userRoutes = (fastify) => {
     fastify.get("/users", function (resquest, reply) {
       fastify.mysql.query("SELECT * FROM users", function (error, results) {
         reply.send(error || results);

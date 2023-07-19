@@ -1,7 +1,7 @@
-const { postsRoutes } = require("./posts");
-const { usersRoutes } = require("./users");
+const { postRoutes } = require("./postRoutes");
+const { userRoutes } = require("./userRoutes");
 
 module.exports = (fastify) => {
-    usersRoutes(fastify),
-    postsRoutes(fastify)
+    userRoutes(fastify),
+    postRoutes(fastify)
 }
