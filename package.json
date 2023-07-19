@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "@fastify/mysql": "^4.1.0",
     "fastify": "^4.20.0"
