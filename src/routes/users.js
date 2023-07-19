@@ -16,7 +16,7 @@ exports.usersRoutes = (fastify) => {
   
     fastify.post("/users", function (request, reply) {
       fastify.mysql.query(
-        `INSERT INTO users (name, password) VALUES ('${request.body.name}', '${request.body.name}')`,
+        `INSERT INTO users (name, email, password) VALUES ('${request.body.name}', '${request.body.name}', '${request.body.name}')`,
         function onResult(error, results) {
           reply.send(error || results);
         }
@@ -25,7 +25,7 @@ exports.usersRoutes = (fastify) => {
   
     fastify.put("/users/:id", function (request, reply) {
       fastify.mysql.query(
-        `UPDATE users SET name = '${request.body.name}' where users.id = ${Number(request.params.id)}`,
+        `UPDATE users SET name = '${request.body.name}', email = '${request.body.email}', password='${request.body.password}' where users.id=${Number(request.params.id)}`,
         function onResult(error, results) {
           reply.send(error || results);
         }
