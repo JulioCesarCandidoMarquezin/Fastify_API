@@ -16,7 +16,7 @@ exports.userRoutes = (fastify) => {
   
     fastify.post("/users", function (request, reply) {
       fastify.mysql.query(
-        `INSERT INTO users (name, email, password) VALUES ('${request.body.name}', '${request.body.name}', '${request.body.name}')`,
+        `INSERT INTO users (name, email, password) VALUES ('${request.body.name}', '${request.body.email}', '${request.body.password}')`,
         function onResult(error, results) {
           reply.send(error || results);
         }
